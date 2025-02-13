@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+        header {
+            padding: 50px 20px;
+            position: relative;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background: white;
+            color: #1e3c72;
+        }
+        section {
+            display: none;
+            padding: 40px;
+            margin: 20px auto;
+            width: 80%;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .show {
+            display: block;
+        }
+
+        /* Experience Section */
+        .experience-container {
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+        .job {
+            margin-bottom: 20px;
+        }
+        .job h3 {
+            margin: 5px 0;
+            color: #1e3c72;
+        }
+        .job p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Projects Section */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .project-card {
+            width: 300px;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .project-card h3 {
+            margin: 10px 0;
+            color: #1e3c72;
+        }
+        .skills-container {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        .skill {
+            margin: 15px 0;
+        }
+        .progress-bar {
+            width: 100%;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 10px;
+        }
+        .progress {
+            height: 10px;
+            background: #1e3c72;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('show'));
+            document.getElementById(id).classList.add('show');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://assets.onecompiler.app/438mteb7q/438v7gzen/R44321.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>Aarib Khan</h1>
+        <p>Web Developer</p>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('about')">About Me</a></li>
+                <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+                <li><a href="#" onclick="showSection('experience')">Experience</a></li>
+                <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate and creative individual with a strong drive for innovation and excellence. 
+        With expertise in web development, filmmaking, graphic design, and game development, 
+        I love bringing ideas to life through coding, storytelling, and design.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <p>HTML & CSS</p>
+                <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill">
+                <p>JavaScript</p>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill">
+                <p>Unity & Game Development</p>
+                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill">
+                <p>Video Editing & Animation</p>
+                <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill">
+                <p>Scriptwriting & Storytelling</p>
+                <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-container">
+            <div class="job">
+                <h3>Freelancing Web Developer</h3>
+                <p>2022 - Present</p>
+                <p>Developing responsive websites, optimizing performance, and implementing interactive UI/UX designs.</p>
+            </div>
+            <div class="job">
+                <h3>Video Editor - Tele Wide Films Studio</h3>
+                <p>2020 - 2022</p>
+                <p>Edited and produced short films, advertisements, and animations for various clients.</p>
+            </div>
+            <div class="job">
+                <h3>Freelance Game Developer</h3>
+                <p>2019 - Present</p>
+                <p>Designed and developed Unity-based mobile games with engaging mechanics and storytelling.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <h3>🎬 Short Film: "Echoes of Time"</h3>
+                <p>A cinematic short film exploring the themes of love and memory. 
+                Responsible for direction, editing, and storytelling.</p>
+            </div>
+            <div class="project-item">
+                <h3>🎮 Mobile Game: "Fantasy Quest"</h3>
+                <p>A 2D RPG game where players embark on an epic adventure to defeat the demon king. 
+                Designed gameplay mechanics, character animations, and levels.</p>
+            </div>
+            <div class="project-item">
+                <h3>🖥️ Portfolio Website</h3>
+                <p>Designed and developed a personal portfolio showcasing skills, projects, and experience. 
+                Implemented smooth animations and an interactive UI.</p>
+            </div>
+            <div class="project-item">
+                <h3>📽️ Instagram Reels: Aesthetic Edits</h3>
+                <p>Created high-quality, engaging Instagram Reels with a focus on storytelling. 
+                Used cinematic transitions and effects to enhance visuals.</p>
+            </div>
+        </div>
+    </section>
+
+
+          <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you have any questions, projects, or collaborations in mind, feel free to reach out!</p>
+        <div class="contact-info">
+            <p>📧 Email: <a href="mailto:khanaarib27@gmail.com">khanaarib27@gmail.com</a></p>
+            <p>📍 Location: [Jaipur, Rajasthan, india]</p>
+            <p>📞 Phone: [8824691118]</p>
+        </div>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Type your message here..." required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="form-status"></p>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const status = document.getElementById('form-status');
+
+            if (!name || !email || !message) {
+                status.innerHTML = "❌ Please fill in all fields.";
+                status.style.color = "red";
+                return;
+            }
+
+            const mailtoLink = `mailto:khanaarib27@gmail.com?subject=New Contact Form Submission from ${name}&body=Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            window.location.href = mailtoLink;
+
+            status.innerHTML = "✅ Message sent successfully!";
+            status.style.color = "green";
+
+            document.getElementById('contactForm').reset();
+        });
+    </script>
+
+</body>
+</html>
